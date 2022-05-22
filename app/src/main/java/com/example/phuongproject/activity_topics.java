@@ -13,10 +13,13 @@ public class activity_topics extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_topics);
     }
-    public void backtoGame (View view)
+    public void backToGame (View view)
     {
         onPause();
         Intent returnBtn = new Intent(this, MainActivity.class);
         startActivity(returnBtn);
+        finish();
     }
+
+
 }
