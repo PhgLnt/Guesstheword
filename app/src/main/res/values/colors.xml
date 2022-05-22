@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="orange_1">#FF994E</color>
+    <color name="orange_2">#FF6700</color>
+    <color name="orange_3">#FF8228</color>
+    <color name="orange_4">#FFBA5F</color>
+    <color name="orange_5">#FFD77B</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="gameblue">#6DB5CA</color>
+    <color name="gamebluelight">#B8D8E0</color>
+    <color name="gamegraylight">#FCF5EF</color>
+    <color name="gameorangelight">#FF7235</color>
+    <color name="red">#FF0000</color>
+    <color name="blue">#088DC0</color>
+    <color name="lightyel">#FFFDF8</color>
+
+
+</resources>
