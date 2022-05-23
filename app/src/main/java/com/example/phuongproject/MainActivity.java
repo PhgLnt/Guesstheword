@@ -30,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
     {
         if(DATA.getData().arrQuiz.size()>0)
         {
+
             Intent intent = new Intent(this, gamePlay_Activity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
         }
         else
