@@ -27,8 +27,7 @@ public class getQuiz_api extends AsyncTask<Void, Void, Void> {
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
      //           .url("http://192.168.3.59/duoihinhbatchu/getQuiz.php")
-                .url("http://192.168.1.153/duoihinhbatchu/getQuiz.php")
-
+                .url("https://lntp.000webhostapp.com/getQuiz.php")
 
                 .build();
         Response response = null;
