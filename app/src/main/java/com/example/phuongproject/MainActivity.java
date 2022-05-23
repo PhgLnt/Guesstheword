@@ -8,9 +8,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.phuongproject.api.getQuiz_api;
-
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,23 +19,38 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        new getQuiz_api().execute();
 //        btn_setting = (Button) findViewById(R.id.btn_settings);
 //        registerForContextMenu(btn_setting);
+        new getQuiz_api().execute();
+
 
     }
     public void play_game(View view)
     {
-        Intent intent = new Intent(this, activity_topics.class);
-        startActivity(intent);
-
+        if(DATA.getData().arrQuiz.size()>0)
+        {
+            Intent intent = new Intent(this, gamePlay_Activity.class);
+            startActivity(intent);
+        }
+        else
+        {
+            Toast.makeText(this, "Error!!", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void exit_game(View view){
-        Intent startMain = new Intent(Intent.ACTION_MAIN);
-        startMain.addCategory(Intent.CATEGORY_HOME);
-        startActivity(startMain);
-        finish();
+        exit();
+    }
+
+    public void exit(){
+        moveTaskToBack(true);
+        android.os.Process.killProcess(android.os.Process.myPid());
+        System.exit(0);
+
+    }
+    @Override
+    public void onBackPressed() {
+        exit();
     }
 //    @Override
 //    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {

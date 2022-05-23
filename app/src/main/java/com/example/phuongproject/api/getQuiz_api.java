@@ -18,8 +18,8 @@ import okhttp3.Response;
 import okhttp3.ResponseBody;
 
 public class getQuiz_api extends AsyncTask<Void, Void, Void> {
-
     String data;
+
 
     @Override
     protected Void doInBackground(Void... voids) {
@@ -46,6 +46,7 @@ public class getQuiz_api extends AsyncTask<Void, Void, Void> {
 
     @Override
     protected void onPostExecute(Void aVoid) {
+
         if (data != null) {
             try {
                 DATA.getData().arrQuiz.clear();
@@ -53,19 +54,19 @@ public class getQuiz_api extends AsyncTask<Void, Void, Void> {
                 for(int i = 0; i <array.length(); i++)
                 {
                     JSONObject jsonObject = array.getJSONObject(i);
-                    quiz_class quiz = new quiz_class();
-                    quiz.name = jsonObject.getString("name");
-                    quiz.answer = jsonObject.getString("answer");
-                    quiz.image = jsonObject.getString("image");
-                    DATA.getData().arrQuiz.add(quiz);
+                        quiz_class quiz = new quiz_class();
+
+                        quiz.name = jsonObject.getString("topic");
+                        quiz.answer = jsonObject.getString("answer");
+                        quiz.image = jsonObject.getString("image");
+                        DATA.getData().arrQuiz.add(quiz);
                 }
+
 
             } catch (JSONException e) {
                 e.printStackTrace();
             }
 
-        } else {
-            // There 's no quiz at all
         }
     }
 }

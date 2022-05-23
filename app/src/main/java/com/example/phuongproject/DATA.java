@@ -8,7 +8,6 @@ public class DATA {
     private  static DATA data;
     static {
         data = new DATA();
-
     }
     public static DATA getData()
     {

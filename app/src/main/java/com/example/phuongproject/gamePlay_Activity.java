@@ -65,23 +65,17 @@ public class gamePlay_Activity extends AppCompatActivity {
         gvLetters = findViewById(R.id.gvLetters);
         iv_quiz = findViewById(R.id.iv_question);
         tv_money = findViewById(R.id.tv_money);
-
         //
-
-
 //        switchbg = findViewById(R.id.switch1);
 //        linLay = findViewById(R.id.linelayout)
 //
 //        if (switchbg != null) {
 //            switchbg.setOnCheckedChangeListener(this::onCheckedChanged);
 //        }
-
         initAnswer();
         setOnClick();
         displayQuiz();
-
     }
-
 
 //    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 //        Toast.makeText(this, "The Switch is " + (isChecked ? "on" : "off"),
@@ -95,7 +89,6 @@ public class gamePlay_Activity extends AppCompatActivity {
 //
 //        }
 //    }
-
 
     private void setOnClick() {
         gvLetters.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -126,9 +119,6 @@ public class gamePlay_Activity extends AppCompatActivity {
                         checkWin();
                     }
                 }
-
-
-
             }
         });
 
@@ -156,8 +146,6 @@ public class gamePlay_Activity extends AppCompatActivity {
             }
         });
     }
-
-
     private  void initAnswer ()
     {
         model = new gamePlay_model(this);
@@ -174,24 +162,46 @@ public class gamePlay_Activity extends AppCompatActivity {
         gvLetters.setNumColumns(arrListLetters.size()/2);
         gvLetters.setAdapter(new answer_adapter(this,0, arrListLetters));
     }
+    public void endQuiz()
+    {
+        AlertDialog.Builder builder
+                = new AlertDialog
+                .Builder(gamePlay_Activity.this);
+        // Set the message show for the Alert time
+        String message = "This is the end of question.\nThanks for playing!!";
+        builder.setMessage(message);
+        builder.setTitle("Notification");
+        builder.setCancelable(false);
+        builder
+                .setNegativeButton(
+                        "OK",
+                        new DialogInterface
+                                .OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                                int which)
+                            {
+                                dialog.cancel();
+                            }
+                        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
     private void displayQuiz()
     {
         quiz = model.getQuiz();
-        dapan = quiz.answer;
 
-        createAllChar();
-        displayAnswer();
-        displayLetters();
-        Glide.with(this)
-            .load(quiz.image)
-            .into(iv_quiz);
-
-        model.getInfo();
-        tv_money.setText(model.user.money+"");
-
+            dapan = quiz.answer;
+            createAllChar();
+            displayAnswer();
+            displayLetters();
+            Glide.with(this)
+                    .load(quiz.image)
+                    .into(iv_quiz);
+            model.getInfo();
+            tv_money.setText(model.user.money + "");
     }
-
-
     // Phát sinh ra các chữ cái đáp án
     private void createAllChar()
     {
@@ -259,6 +269,7 @@ public class gamePlay_Activity extends AppCompatActivity {
             model.getInfo();
             model.user.money += 10;
             model.saveInfo();
+
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 public void run() {
@@ -270,9 +281,11 @@ public class gamePlay_Activity extends AppCompatActivity {
         }
 
     }
+    // Gợi ý button
     public void openHint (View view)
     {
         model.getInfo();
+
         if(model.user.money < 10)
         {
             Toast.makeText(this, "Fee is 10$ and you are out of money", Toast.LENGTH_SHORT).show();
@@ -333,9 +346,11 @@ public class gamePlay_Activity extends AppCompatActivity {
         tv_money.setText(model.user.money+"");
 
     }
+   // Đổi câu hỏi
     public void changeQuiz (View view)
     {
         model.getInfo();
+
         if(model.user.money < 10)
         {
             Toast.makeText(this, "Fee is 10$ and you are out of money", Toast.LENGTH_SHORT).show();
@@ -374,7 +389,6 @@ public class gamePlay_Activity extends AppCompatActivity {
         }
 
     }
-
     // Show help
     public void help_center(View view){
         // Create the object of
