@@ -4,6 +4,7 @@ package com.example.phuongproject.api;
 import android.os.AsyncTask;
 
 import com.example.phuongproject.DATA;
+import com.example.phuongproject.activity_topics;
 import com.example.phuongproject.obj.quiz_class;
 
 import org.json.JSONArray;
@@ -19,7 +20,7 @@ import okhttp3.ResponseBody;
 
 public class getQuiz_api extends AsyncTask<Void, Void, Void> {
     String data;
-
+    activity_topics topic;
 
     @Override
     protected Void doInBackground(Void... voids) {
@@ -60,10 +61,12 @@ public class getQuiz_api extends AsyncTask<Void, Void, Void> {
                         DATA.getData().arrQuiz.add(quiz);
                 }
 
-
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+
+        }
+        else {
 
         }
     }

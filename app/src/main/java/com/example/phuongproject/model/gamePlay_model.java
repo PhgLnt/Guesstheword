@@ -6,6 +6,8 @@ import com.example.phuongproject.obj.for_player;
 import com.example.phuongproject.obj.quiz_class;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class gamePlay_model {
     gamePlay_Activity game;
@@ -28,6 +30,7 @@ public class gamePlay_model {
     public quiz_class getQuiz ()
     {
         noQuiz++;
+
         if(noQuiz>=arrQuestion.size())
         {
             noQuiz = arrQuestion.size()-1;

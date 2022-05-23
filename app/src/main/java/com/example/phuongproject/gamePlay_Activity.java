@@ -47,11 +47,7 @@ public class gamePlay_Activity extends AppCompatActivity {
     ImageView iv_quiz;
     TextView tv_money;
 
-    public void setTopic(String topic) {
-        this.topic = topic;
-    }
 
-    String topic;
 //    Switch switchbg;
 //    LinearLayout linLay;
     int index = 0;
@@ -195,7 +191,6 @@ public class gamePlay_Activity extends AppCompatActivity {
     }
     private void displayQuiz() {
         quiz = model.getQuiz();
-        //  if(quiz.name == topic){
         dapan = quiz.answer;
         createAllChar();
         displayAnswer();
@@ -205,12 +200,7 @@ public class gamePlay_Activity extends AppCompatActivity {
                 .into(iv_quiz);
         model.getInfo();
         tv_money.setText(model.user.money + "");
- //         }
-//            else
-//        {
-//            displayQuiz();
-//        }
-//            return;
+
     }
     // Phát sinh ra các chữ cái đáp án
     private void createAllChar()
@@ -333,18 +323,13 @@ public class gamePlay_Activity extends AppCompatActivity {
 
         String hint = "" +dapan.charAt(id);
         hint = hint.toUpperCase();
-        for(int i=0; i<arrlistAnswer.size();i++)
-        {
-            if(arrlistAnswer.get(i).toUpperCase().equals(hint))
-            {
-                arrlistAnswer.set(i,"");
-            }
-        }
+
         for(int i = 0; i<arrListLetters.size(); i++)
         {
             if(hint.equals(arrListLetters.get(i)))
             {
                 arrListLetters.set(i,"");
+                break;
             }
         }
         arrlistAnswer.set(id, hint);

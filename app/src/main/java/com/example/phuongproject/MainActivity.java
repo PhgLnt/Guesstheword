@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.phuongproject.api.getQuiz_api;
+import com.example.phuongproject.model.gamePlay_model;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 //        btn_setting = (Button) findViewById(R.id.btn_settings);
 //        registerForContextMenu(btn_setting);
-        new getQuiz_api().execute();
 
+        new getQuiz_api().execute();
 
     }
     public void play_game(View view)
