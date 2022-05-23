@@ -12,6 +12,7 @@ import com.example.phuongproject.api.getQuiz_api;
 
 
 public class activity_topics extends AppCompatActivity {
+    gamePlay_Activity game;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +29,7 @@ public class activity_topics extends AppCompatActivity {
     }
     public void clickFood(View view)
     {
-
+        game.setTopic("food");
         Intent intent = new Intent(this, gamePlay_Activity.class);
         startActivity(intent);
 
@@ -36,7 +37,7 @@ public class activity_topics extends AppCompatActivity {
     }
     public  void clickJob(View view)
     {
-
+        game.setTopic("job");
         Intent intent = new Intent(this, gamePlay_Activity.class);
         startActivity(intent);
     }

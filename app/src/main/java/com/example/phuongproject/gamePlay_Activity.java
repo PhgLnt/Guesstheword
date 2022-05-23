@@ -46,7 +46,12 @@ public class gamePlay_Activity extends AppCompatActivity {
     GridView gvLetters;
     ImageView iv_quiz;
     TextView tv_money;
-    CardView cv;
+
+    public void setTopic(String topic) {
+        this.topic = topic;
+    }
+
+    String topic;
 //    Switch switchbg;
 //    LinearLayout linLay;
     int index = 0;
@@ -188,19 +193,24 @@ public class gamePlay_Activity extends AppCompatActivity {
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
-    private void displayQuiz()
-    {
+    private void displayQuiz() {
         quiz = model.getQuiz();
-
-            dapan = quiz.answer;
-            createAllChar();
-            displayAnswer();
-            displayLetters();
-            Glide.with(this)
-                    .load(quiz.image)
-                    .into(iv_quiz);
-            model.getInfo();
-            tv_money.setText(model.user.money + "");
+        //  if(quiz.name == topic){
+        dapan = quiz.answer;
+        createAllChar();
+        displayAnswer();
+        displayLetters();
+        Glide.with(this)
+                .load(quiz.image)
+                .into(iv_quiz);
+        model.getInfo();
+        tv_money.setText(model.user.money + "");
+ //         }
+//            else
+//        {
+//            displayQuiz();
+//        }
+//            return;
     }
     // Phát sinh ra các chữ cái đáp án
     private void createAllChar()
@@ -365,7 +375,7 @@ public class gamePlay_Activity extends AppCompatActivity {
     public void backtoMain(View view)
     {
         onPause();
-        Intent returnBtn = new Intent(this, activity_topics.class);
+        Intent returnBtn = new Intent(this, MainActivity.class);
         startActivity(returnBtn);
     }
 
@@ -375,7 +385,7 @@ public class gamePlay_Activity extends AppCompatActivity {
         ImageView im = findViewById(R.id.imMusic);
         if(mp == null)
         {
-            mp = MediaPlayer.create(gamePlay_Activity.this, R.raw.latata);
+            mp = MediaPlayer.create(gamePlay_Activity.this, R.raw.mmbnnoo);
             mp.start();
             im.setBackgroundResource(R.drawable.volume);
         }

@@ -1,9 +1,6 @@
 package com.example.phuongproject.model;
 
-import android.widget.Toast;
-
 import com.example.phuongproject.DATA;
-
 import com.example.phuongproject.gamePlay_Activity;
 import com.example.phuongproject.obj.for_player;
 import com.example.phuongproject.obj.quiz_class;
@@ -17,7 +14,6 @@ public class gamePlay_model {
     public for_player user;
 
 
-
     public gamePlay_model(gamePlay_Activity game)
     {
         this.game = game;
@@ -27,7 +23,6 @@ public class gamePlay_model {
     private  void create_Data ()
     {
         arrQuestion = new ArrayList<>(DATA.getData().arrQuiz);
-
     }
 
     public quiz_class getQuiz ()
