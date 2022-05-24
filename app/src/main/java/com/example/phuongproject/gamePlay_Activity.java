@@ -1,37 +1,23 @@
 package com.example.phuongproject;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.core.app.NotificationCompat;
 
 import android.app.AlertDialog;
-import android.app.Notification;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.CompoundButton;
-import android.widget.LinearLayout;
-import android.widget.MediaController;
-import android.view.View.OnClickListener;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.RemoteViews;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.phuongproject.adapter.answer_adapter;
-import com.example.phuongproject.model.gamePlay_model;
 import com.example.phuongproject.obj.quiz_class;
 
 import java.util.ArrayList;
@@ -46,12 +32,9 @@ public class gamePlay_Activity extends AppCompatActivity {
     GridView gvLetters;
     ImageView iv_quiz;
     TextView tv_money;
-
-
 //    Switch switchbg;
 //    LinearLayout linLay;
     int index = 0;
-
     gamePlay_model model;
     quiz_class quiz;
     private String dapan = "huhu";

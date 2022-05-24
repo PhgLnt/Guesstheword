@@ -1,7 +1,5 @@
 package com.example.phuongproject;
 
-import static com.google.android.material.internal.ContextUtils.getActivity;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,7 +9,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.phuongproject.api.getQuiz_api;
-import com.example.phuongproject.model.gamePlay_model;
 
 public class MainActivity extends AppCompatActivity {
 

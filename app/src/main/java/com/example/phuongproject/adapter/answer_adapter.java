@@ -21,8 +21,6 @@ public class answer_adapter extends ArrayAdapter<String> {
     private Context myContext;
     private ArrayList<String> arrList;
 
-
-
     public answer_adapter(@NonNull Context context, int resource, @NonNull List<String> objects) {
         super(context, resource, objects);
         this.myContext = context;
@@ -31,15 +29,15 @@ public class answer_adapter extends ArrayAdapter<String> {
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public View getView(int position, @Nullable View cV, @NonNull ViewGroup parent) {
 
-        if(convertView == null)
+        if(cV == null)
         {
             LayoutInflater inflater = (LayoutInflater)myContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.answer_cell,null);
+            cV = inflater.inflate(R.layout.answer_cell,null);
         }
-        TextView tv_answer = convertView.findViewById(R.id.tv_answer);
+        TextView tv_answer = cV.findViewById(R.id.tv_answer);
         tv_answer.setText(this.arrList.get(position));
-        return convertView;
+        return cV;
     }
 }

@@ -1,4 +1,4 @@
-package com.example.phuongproject.model;
+package com.example.phuongproject;
 
 import com.example.phuongproject.DATA;
 import com.example.phuongproject.gamePlay_Activity;
