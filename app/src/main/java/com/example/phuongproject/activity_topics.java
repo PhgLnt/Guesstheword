@@ -12,11 +12,12 @@ import com.example.phuongproject.api.getQuiz_api;
 
 
 public class activity_topics extends AppCompatActivity {
+
     public String getTopic() {
         return topic;
     }
-
     String topic;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,7 @@ public class activity_topics extends AppCompatActivity {
     public void clickFood(View view)
     {
         topic = "food";
+
     }
     public  void clickJob(View view)
     {

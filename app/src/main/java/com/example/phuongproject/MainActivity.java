@@ -44,8 +44,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void exit(){
         moveTaskToBack(true);
-        android.os.Process.killProcess(android.os.Process.myPid());
-        System.exit(0);
+//        android.os.Process.killProcess(android.os.Process.myPid());
+//        System.exit(0);
+        finish();
 
     }
     @Override
@@ -80,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 //    public void setting_game (View view){
 //        this.openContextMenu(view);
 //    }
-//
+
 
 
 

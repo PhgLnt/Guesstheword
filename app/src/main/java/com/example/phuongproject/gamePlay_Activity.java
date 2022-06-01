@@ -52,7 +52,6 @@ public class gamePlay_Activity extends AppCompatActivity {
         //
 //        switchbg = findViewById(R.id.switch1);
 //        linLay = findViewById(R.id.linelayout)
-//
 //        if (switchbg != null) {
 //            switchbg.setOnCheckedChangeListener(this::onCheckedChanged);
 //        }
